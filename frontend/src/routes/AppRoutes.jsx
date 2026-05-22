@@ -1,20 +1,28 @@
-import HeroSection from "../components/HeroSection";
-import BookingForm from "../components/BookingForm";
-import BookingTable from "../components/BookingTable";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import "../styles/navbar.css";
-import "../styles/table.css";
+import Home from "../pages/Home";
+import Movies from "../pages/Movies";
+import Dashboard from "../pages/Dashboard";
+import Bookings from "../pages/Bookings";
+import NotFound from "../pages/NotFound";
 
 function AppRoutes() {
   return (
-    <div>
-      <HeroSection />
+    <BrowserRouter>
+      <Routes>
 
-      <div className="container">
-        <BookingForm />
-        <BookingTable />
-      </div>
-    </div>
+        <Route path="/" element={<Home />} />
+
+        <Route path="/movies" element={<Movies />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route path="/bookings" element={<Bookings />} />
+
+        <Route path="*" element={<NotFound />} />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

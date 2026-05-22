@@ -1,11 +1,26 @@
-function MovieCard() {
+function MovieCard({ title }) {
   return (
     <div className="movie-card">
-      <img src="https://via.placeholder.com/250" alt="movie"/>
-      <h3>Avengers</h3>
-      <button>Book Now</button>
+
+      <img
+        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
+        alt="movie"
+      />
+
+      <div className="movie-info">
+
+        <h3>{title}</h3>
+
+        <p>Action / Sci-Fi</p>
+
+        <button>
+          Book Now
+        </button>
+
+      </div>
+
     </div>
-  )
+  );
 }
 
-export default MovieCard
+export default MovieCard;

@@ -1,9 +1,15 @@
 function Footer() {
   return (
-    <div>
-      <h3>© CineHub</h3>
+    <div className="footer">
+
+      <h2>🎬 CineHub</h2>
+
+      <p>
+        Premium Movie Booking Platform
+      </p>
+
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
