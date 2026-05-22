@@ -1,28 +1,17 @@
-import { Link } from "react-router-dom";
-
 function Navbar() {
   return (
     <div className="navbar">
 
-      <div className="logo">
+      <h1 className="logo">
         🎬 CineHub
-      </div>
+      </h1>
 
       <div className="nav-links">
-
-        <Link to="/">Home</Link>
-
-        <Link to="/movies">Movies</Link>
-
-        <Link to="/dashboard">Dashboard</Link>
-
-        <Link to="/bookings">Bookings</Link>
-
+        <span>Home</span>
+        <span>Movies</span>
+        <span>Bookings</span>
+        <span>Dashboard</span>
       </div>
-
-      <button className="login-btn">
-        Login
-      </button>
 
     </div>
   );

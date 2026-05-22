@@ -11,10 +11,10 @@ function MovieCard({ title }) {
 
         <h3>{title}</h3>
 
-        <p>Action / Sci-Fi</p>
+        <p>Sci-Fi / Action</p>
 
         <button>
-          Book Now
+          Book Ticket
         </button>
 
       </div>

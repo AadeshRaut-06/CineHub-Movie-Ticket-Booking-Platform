@@ -11,9 +11,7 @@ function Home() {
     "Avatar",
     "Batman",
     "Interstellar",
-    "Joker",
-    "Avengers",
-    "Inception"
+    "Joker"
   ];
 
   return (
@@ -25,32 +23,17 @@ function Home() {
 
       <div className="section">
 
-        <div className="section-header">
-          <h2>Now Showing</h2>
-          <span>View All</span>
-        </div>
+        <h2 className="heading">
+          Trending Movies
+        </h2>
 
         <div className="movie-grid">
 
           {movies.map((movie, index) => (
-            <MovieCard key={index} title={movie} />
-          ))}
-
-        </div>
-
-      </div>
-
-      <div className="section">
-
-        <div className="section-header">
-          <h2>Coming Soon</h2>
-          <span>View All</span>
-        </div>
-
-        <div className="movie-grid">
-
-          {movies.map((movie, index) => (
-            <MovieCard key={index} title={movie} />
+            <MovieCard
+              key={index}
+              title={movie}
+            />
           ))}
 
         </div>

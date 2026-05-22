@@ -1,17 +1,7 @@
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
-import BookingForm from './components/BookingForm'
-import BookingTable from './components/BookingTable'
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-  return (
-    <div>
-      <Navbar />
-      <HeroSection />
-      <BookingForm />
-      <BookingTable />
-    </div>
-  )
+  return <AppRoutes />;
 }
 
-export default App
+export default App;

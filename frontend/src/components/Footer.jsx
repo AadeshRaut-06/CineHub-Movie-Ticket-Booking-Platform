@@ -4,9 +4,7 @@ function Footer() {
 
       <h2>🎬 CineHub</h2>
 
-      <p>
-        Premium Movie Booking Platform
-      </p>
+      <p>Premium Movie Experience</p>
 
     </div>
   );
