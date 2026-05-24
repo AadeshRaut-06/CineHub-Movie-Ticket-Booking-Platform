@@ -17,7 +17,7 @@ const movies = [
     rating: "9.0",
     duration: "3h 2m",
     image: "https://image.tmdb.org/t/p/original/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-    banner: "https://wallpapercave.com/wp/wp4056410.jpg"
+    banner: "https://wallpapers.com/images/featured/avengers-endgame-mghdp4gaqzu4q4us.jpg"
   },
 
   {
@@ -27,7 +27,7 @@ const movies = [
     rating: "8.1",
     duration: "2h 49m",
     image: "https://image.tmdb.org/t/p/original/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
-    banner: "https://wallpapercave.com/wp/wp11370130.jpg"
+    banner: "https://4kwallpapers.com/images/walls/thumbs_2t/18980.jpg"
   },
 
   {
@@ -37,7 +37,7 @@ const movies = [
     rating: "8.7",
     duration: "2h 55m",
     image: "https://media-cache.cinematerial.com/p/500x/pokt9ulk/pushpa-the-rule-part-2-indian-movie-poster.jpg?v=1712554939",
-    banner: "https://media-cache.cinematerial.com/p/500x/pokt9ulk/pushpa-the-rule-part-2-indian-movie-poster.jpg?v=1712554939"
+    banner: "https://english.rtvlive.com/wp-content/uploads/2024/12/pushpa-2-tickets.png"
   },
 
   {
@@ -47,7 +47,7 @@ const movies = [
     rating: "8.0",
     duration: "2h 15m",
     image: "https://upload.wikimedia.org/wikipedia/en/a/a1/Stree_2.jpg",
-    banner: "https://upload.wikimedia.org/wikipedia/en/a/a1/Stree_2.jpg"
+    banner: "https://myviewsonbollywood.wordpress.com/wp-content/uploads/2024/09/stree.jpg"
   },
 
   {
@@ -57,7 +57,7 @@ const movies = [
     rating: "9.1",
     duration: "2h 54m",
     image: "https://upload.wikimedia.org/wikipedia/en/a/a1/Sairat_Marathi_Film_Poster.jpg",
-    banner: "https://upload.wikimedia.org/wikipedia/en/a/a1/Sairat_Marathi_Film_Poster.jpg"
+    banner: "https://m.media-amazon.com/images/M/MV5BMDM4MzU0Y2YtMTliYy00NTFiLTlkMTctODA0NGYxMjQ2YWEwXkEyXkFqcGc@._V1_.jpg"
   },
 
   {
@@ -67,7 +67,7 @@ const movies = [
     rating: "8.6",
     duration: "2h 10m",
     image: "https://resizing.flixster.com/b043SmCzlrlR5Pkgrkbo-pPW4_Q=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25156142_p_v11_aa.jpg",
-    banner: "https://resizing.flixster.com/b043SmCzlrlR5Pkgrkbo-pPW4_Q=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25156142_p_v11_aa.jpg"
+    banner: "https://img10.hotstar.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/1159/1651159-i-8430f025d72c"
   },
 
   {
@@ -77,7 +77,7 @@ const movies = [
     rating: "9.2",
     duration: "3h",
     image: "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg",
-    banner: "https://wallpapercave.com/wp/wp13683717.jpg"
+    banner: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROY7cJc5kpEKvm4PG3krsijVUqXh13K4g9Uw&s"
   }
 
 ]
