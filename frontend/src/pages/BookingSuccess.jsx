@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar"
-
 import { useLocation, Link } from "react-router-dom"
 
 function BookingSuccess() {
@@ -10,21 +8,15 @@ function BookingSuccess() {
 
   if(!booking){
 
-    return(
+    return (
 
-      <div className="page">
+      <div className="success-page">
 
-        <Navbar />
+        <h1>No Booking Found</h1>
 
-        <div className="success-card">
-
-          <h1>No Booking Found</h1>
-
-          <Link to="/">
-            Go Home
-          </Link>
-
-        </div>
+        <Link to="/">
+          Go Home
+        </Link>
 
       </div>
 
@@ -36,25 +28,17 @@ function BookingSuccess() {
 
     <div className="success-page">
 
-      <Navbar />
-
       <div className="success-card">
 
-        <div className="checkmark">
-          ✓
+        <div className="success-icon">
+          ✅
         </div>
 
-        <h1>
-          Booking Confirmed
-        </h1>
+        <h1>Booking Confirmed</h1>
+
+        <p>Your tickets are booked successfully</p>
 
         <div className="ticket-details">
-
-          <img
-            src={booking.poster}
-            alt={booking.movie}
-            className="success-poster"
-          />
 
           <h2>{booking.movie}</h2>
 
@@ -90,12 +74,17 @@ function BookingSuccess() {
 
         </div>
 
+        <Link to="/">
+          <button className="book-btn">
+            Back To Home
+          </button>
+        </Link>
+
       </div>
 
     </div>
 
   )
-
 }
 
 export default BookingSuccess
