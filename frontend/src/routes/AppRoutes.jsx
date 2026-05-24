@@ -4,7 +4,7 @@ import Home from "../pages/Home"
 import Movies from "../pages/Movies"
 import Bookings from "../pages/Bookings"
 import Dashboard from "../pages/Dashboard"
-import Success from "../pages/Success"
+import Success from "../pages/BookingSuccess"
 import NotFound from "../pages/NotFound"
 
 function AppRoutes() {

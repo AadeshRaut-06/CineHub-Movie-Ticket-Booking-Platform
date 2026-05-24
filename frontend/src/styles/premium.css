@@ -272,3 +272,42 @@ body {
   font-weight:bold;
   margin-bottom:30px;
 }
+
+.active-time{
+  background:#e50914 !important;
+  color:white;
+  transform:scale(1.05);
+  box-shadow:0 0 15px #e50914;
+}
+
+.ticket-details{
+
+  margin-top:30px;
+
+  text-align:left;
+
+  background:#1f2937;
+
+  padding:25px;
+
+  border-radius:20px;
+
+}
+
+.ticket-details h2{
+
+  margin-bottom:20px;
+
+  color:#e50914;
+
+}
+
+.ticket-details p{
+
+  margin:12px 0;
+
+  color:#d1d5db;
+
+  font-size:16px;
+
+}

@@ -14,6 +14,14 @@ const movie =
 
   const [selectedSeats, setSelectedSeats] = useState([])
 
+  const [selectedTime, setSelectedTime] = useState("")
+
+  const [selectedTheater, setSelectedTheater] = useState("")
+
+const [selectedDate, setSelectedDate] = useState("")
+
+const [customerName, setCustomerName] = useState("")
+
   const seats = [
     "A1","A2","A3","A4","A5","A6","A7","A8",
     "B1","B2","B3","B4","B5","B6","B7","B8",
@@ -40,9 +48,43 @@ const movie =
 
   }
 
+  
+
  const confirmBooking = () => {
 
-  navigate("/success")
+  if(selectedSeats.length === 0){
+
+    alert("Please select seats")
+
+    return
+  }
+
+  if(!selectedTime){
+
+    alert("Please select show timing")
+
+    return
+  }
+
+  navigate("/success", {
+
+  state: {
+
+    movie: movie.title,
+
+    seats: selectedSeats,
+
+    timing: selectedTime,
+
+    theater: selectedTheater,
+
+    date: selectedDate,
+
+    customer: customerName
+
+  }
+
+})
 
 }
 
@@ -66,47 +108,63 @@ const movie =
 
             <h2>{movie.title}</h2>
 
-            <select>
-              <option>Select Theatre</option>
-              <option>PVR</option>
-              <option>INOX</option>
-              <option>Cinepolis</option>
-            </select>
+            <select
+  onChange={(e) =>
+    setSelectedTheater(e.target.value)
+  }
+>
 
-            <input type="date" />
+  <option>Select Theatre</option>
+
+  <option>PVR</option>
+
+  <option>INOX</option>
+
+  <option>Cinepolis</option>
+
+</select>
+
+<input
+  type="date"
+
+  onChange={(e) =>
+    setSelectedDate(e.target.value)
+  }
+/>
+
+<input
+  type="text"
+
+  placeholder="Full Name"
+
+  onChange={(e) =>
+    setCustomerName(e.target.value)
+  }
+/>
 
             <div className="time-slots">
 
-  <button
-    onClick={() => alert("11:00 AM Selected")}
-  >
-    11:00 AM
-  </button>
+  {
+    ["11:00 AM", "03:00 PM", "06:45 PM", "10:30 PM"]
+    .map(time => (
 
-  <button
-    onClick={() => alert("03:00 PM Selected")}
-  >
-    03:00 PM
-  </button>
+      <button
+        key={time}
+        className={
+          selectedTime === time
+          ? "active-time"
+          : ""
+        }
 
-  <button
-    onClick={() => alert("06:45 PM Selected")}
-  >
-    06:45 PM
-  </button>
+        onClick={() => setSelectedTime(time)}
+      >
+        {time}
+      </button>
 
-  <button
-    onClick={() => alert("10:30 PM Selected")}
-  >
-    10:30 PM
-  </button>
+    ))
+  }
 
 </div>
-
-            <input
-              type="text"
-              placeholder="Full Name"
-            />
 
             <input
               type="email"
