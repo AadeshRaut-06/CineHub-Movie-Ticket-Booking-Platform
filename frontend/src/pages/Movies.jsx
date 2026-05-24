@@ -1,7 +1,7 @@
 function Movies() {
   return (
-    <div>
-      <h1>Movies Page</h1>
+    <div className='page'>
+      <h1>Movies Catalogue</h1>
     </div>
   )
 }

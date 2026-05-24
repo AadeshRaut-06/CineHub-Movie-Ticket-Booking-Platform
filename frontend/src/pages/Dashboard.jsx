@@ -1,9 +1,10 @@
 function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className='page'>
+      <h1>Dashboard Analytics</h1>
     </div>
   )
 }
 
 export default Dashboard
+

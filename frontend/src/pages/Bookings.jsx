@@ -1,9 +1,9 @@
-function Bookings() {
+function Booking() {
   return (
-    <div>
-      <h1>Bookings Page</h1>
+    <div className='page'>
+      <h1>Booking System</h1>
     </div>
   )
 }
 
-export default Bookings
+export default Booking

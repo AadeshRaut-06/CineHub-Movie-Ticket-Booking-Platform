@@ -1,49 +1,35 @@
-import Navbar from "../components/Navbar";
-import HeroSection from "../components/HeroSection";
-import MovieCard from "../components/MovieCard";
-import Footer from "../components/Footer";
+import Navbar from '../components/Navbar'
+import HeroBanner from '../components/HeroBanner'
+import MovieRow from '../components/MovieRow'
+import Footer from '../components/Footer'
 
-import "../styles/premium.css";
+import { trendingMovies } from '../data/movies'
 
 function Home() {
-
-  const movies = [
-    "Avatar",
-    "Batman",
-    "Interstellar",
-    "Joker"
-  ];
-
   return (
-    <div className="app">
-
+    <div className='app'>
       <Navbar />
 
-      <HeroSection />
+      <HeroBanner />
 
-      <div className="section">
+      <MovieRow
+        title='Trending Movies'
+        movies={trendingMovies}
+      />
 
-        <h2 className="heading">
-          Trending Movies
-        </h2>
+      <MovieRow
+        title='Latest Hindi Movies'
+        movies={trendingMovies}
+      />
 
-        <div className="movie-grid">
-
-          {movies.map((movie, index) => (
-            <MovieCard
-              key={index}
-              title={movie}
-            />
-          ))}
-
-        </div>
-
-      </div>
+      <MovieRow
+        title='Latest Marathi Movies'
+        movies={trendingMovies}
+      />
 
       <Footer />
-
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

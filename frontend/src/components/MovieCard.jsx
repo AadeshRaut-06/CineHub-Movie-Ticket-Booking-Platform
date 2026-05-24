@@ -1,26 +1,28 @@
-function MovieCard({ title }) {
+import { motion } from 'framer-motion'
+
+function MovieCard({ movie }) {
   return (
-    <div className="movie-card">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className='movie-card'
+    >
+      <img src={movie.image} alt={movie.title} />
 
-      <img
-        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
-        alt="movie"
-      />
+      <div className='movie-info'>
+        <h3>{movie.title}</h3>
 
-      <div className="movie-info">
+        <p>{movie.genre}</p>
 
-        <h3>{title}</h3>
+        <div className='movie-meta'>
+          <span>{movie.language}</span>
+          <span>⭐ {movie.rating}</span>
+        </div>
 
-        <p>Sci-Fi / Action</p>
-
-        <button>
-          Book Ticket
-        </button>
-
+        <button>Book Now</button>
       </div>
-
-    </div>
-  );
+    </motion.div>
+  )
 }
 
-export default MovieCard;
+export default MovieCard
+

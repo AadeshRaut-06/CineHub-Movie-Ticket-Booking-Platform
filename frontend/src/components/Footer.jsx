@@ -1,13 +1,11 @@
 function Footer() {
   return (
-    <div className="footer">
-
+    <footer className='footer'>
       <h2>🎬 CineHub</h2>
 
-      <p>Premium Movie Experience</p>
-
-    </div>
-  );
+      <p>Premium OTT Movie Booking Platform</p>
+    </footer>
+  )
 }
 
-export default Footer;
+export default Footer
