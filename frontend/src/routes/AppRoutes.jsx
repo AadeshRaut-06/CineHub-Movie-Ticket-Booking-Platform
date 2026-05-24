@@ -5,6 +5,7 @@ import Movies from "../pages/Movies"
 import Bookings from "../pages/Bookings"
 import Dashboard from "../pages/Dashboard"
 import BookingSuccess from "../pages/BookingSuccess"
+import BookingsList from "../pages/BookingsList"
 
 function AppRoutes() {
 
@@ -15,6 +16,8 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
 
       <Route path="/movies" element={<Movies />} />
+
+      <Route path="/bookings" element={<BookingsList />} />
 
       <Route path="/bookings/:id" element={<Bookings />} />
 

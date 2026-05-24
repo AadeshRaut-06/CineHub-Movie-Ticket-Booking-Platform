@@ -90,6 +90,31 @@ function Bookings() {
       return
     }
 
+    const bookingData = {
+
+  movie: movie.title,
+
+  seats: selectedSeats,
+
+  timing: selectedTime,
+
+  theater: selectedTheater,
+
+  date: selectedDate,
+
+  customer: customerName,
+
+  poster: movie.image
+
+}
+
+localStorage.setItem(
+
+  "cinehub-booking",
+
+  JSON.stringify(bookingData)
+
+) 
     navigate("/success", {
 
       state: {
