@@ -193,3 +193,81 @@ body {
 .page {
   padding: 100px;
 }
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #b026ff;
+}
+
+.booking-page {
+  padding: 40px;
+  color: white;
+}
+
+.booking-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.booking-left img {
+  width: 400px;
+  border-radius: 20px;
+}
+
+.booking-right {
+  flex: 1;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #181818;
+  color: white;
+}
+
+.seats {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.seats button {
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background: #252525;
+  color: white;
+  cursor: pointer;
+}
+
+.seats button:hover {
+  background: #b026ff;
+}
+
+.book-btn {
+  background: linear-gradient(
+    90deg,
+    #8e2de2,
+    #4a00e0
+  );
+}

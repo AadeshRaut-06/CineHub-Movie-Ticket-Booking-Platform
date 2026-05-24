@@ -1,28 +1,30 @@
-import { motion } from 'framer-motion'
+import { useNavigate } from "react-router-dom"
 
 function MovieCard({ movie }) {
+
+  const navigate = useNavigate()
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      className='movie-card'
-    >
+    <div className="movie-card">
+
       <img src={movie.image} alt={movie.title} />
 
-      <div className='movie-info'>
+      <div className="movie-info">
+
         <h3>{movie.title}</h3>
 
-        <p>{movie.genre}</p>
+        <p>{movie.language}</p>
 
-        <div className='movie-meta'>
-          <span>{movie.language}</span>
-          <span>⭐ {movie.rating}</span>
-        </div>
+        <button
+          onClick={() => navigate("/bookings")}
+        >
+          Book Now
+        </button>
 
-        <button>Book Now</button>
       </div>
-    </motion.div>
+
+    </div>
   )
 }
 
 export default MovieCard
-

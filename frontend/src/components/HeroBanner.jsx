@@ -1,29 +1,38 @@
-import { motion } from 'framer-motion'
+import { useNavigate } from "react-router-dom"
 
 function HeroBanner() {
+
+  const navigate = useNavigate()
+
   return (
-    <div className='hero-banner'>
-      <div className='hero-overlay'>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className='hero-content'
-        >
-          <span className='tag'>New Release</span>
+    <div className="hero-banner">
 
-          <h1>Avatar: The Way of Water</h1>
+      <div className="overlay">
 
-          <p>
-            Experience premium cinematic storytelling with immersive visuals.
-          </p>
+        <h1>Avatar : The Way Of Water</h1>
 
-          <div className='hero-buttons'>
-            <button className='primary-btn'>Book Ticket</button>
-            <button className='secondary-btn'>Watch Trailer</button>
-          </div>
-        </motion.div>
+        <p>
+          Experience the next generation cinematic universe.
+          Book tickets instantly with CineHub.
+        </p>
+
+        <div className="hero-buttons">
+
+          <button
+            className="primary-btn"
+            onClick={() => navigate("/bookings")}
+          >
+            Book Ticket
+          </button>
+
+          <button className="secondary-btn">
+            Watch Trailer
+          </button>
+
+        </div>
+
       </div>
+
     </div>
   )
 }
