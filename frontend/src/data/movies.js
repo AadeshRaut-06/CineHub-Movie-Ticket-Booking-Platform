@@ -36,8 +36,8 @@ const movies = [
     language: "Hindi",
     rating: "8.7",
     duration: "2h 55m",
-    image: "https://m.media-amazon.com/images/M/MV5BZjVkZjk2ZjEtNjAwYi00NjE5LWE5YzEtYzRiN2IwM2Y0YzA3XkEyXkFqcGc@._V1_.jpg",
-    banner: "https://wallpapercave.com/wp/wp13376935.jpg"
+    image: "https://media-cache.cinematerial.com/p/500x/pokt9ulk/pushpa-the-rule-part-2-indian-movie-poster.jpg?v=1712554939",
+    banner: "https://media-cache.cinematerial.com/p/500x/pokt9ulk/pushpa-the-rule-part-2-indian-movie-poster.jpg?v=1712554939"
   },
 
   {
@@ -46,8 +46,8 @@ const movies = [
     language: "Hindi",
     rating: "8.0",
     duration: "2h 15m",
-    image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/stree-2-et00364249-1717584762.jpg",
-    banner: "https://images.hindustantimes.com/img/2024/06/25/1600x900/stree_2_1719304277497_1719304284008.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/en/a/a1/Stree_2.jpg",
+    banner: "https://upload.wikimedia.org/wikipedia/en/a/a1/Stree_2.jpg"
   },
 
   {
@@ -56,8 +56,8 @@ const movies = [
     language: "Marathi",
     rating: "9.1",
     duration: "2h 54m",
-    image: "https://upload.wikimedia.org/wikipedia/en/5/56/Sairat_poster.jpg",
-    banner: "https://images.indianexpress.com/2016/05/sairat759.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/en/a/a1/Sairat_Marathi_Film_Poster.jpg",
+    banner: "https://upload.wikimedia.org/wikipedia/en/a/a1/Sairat_Marathi_Film_Poster.jpg"
   },
 
   {
@@ -66,8 +66,8 @@ const movies = [
     language: "Marathi",
     rating: "8.6",
     duration: "2h 10m",
-    image: "https://upload.wikimedia.org/wikipedia/en/5/5c/Baipan_Bhari_Deva_film_poster.jpg",
-    banner: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202307/baipan_bhari_deva-sixteen_nine.jpg"
+    image: "https://resizing.flixster.com/b043SmCzlrlR5Pkgrkbo-pPW4_Q=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25156142_p_v11_aa.jpg",
+    banner: "https://resizing.flixster.com/b043SmCzlrlR5Pkgrkbo-pPW4_Q=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p25156142_p_v11_aa.jpg"
   },
 
   {

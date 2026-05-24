@@ -19,7 +19,7 @@ function HeroBanner() {
         : prev + 1
       )
 
-    }, 4000)
+    }, 8000)
 
     return () => clearInterval(interval)
 
