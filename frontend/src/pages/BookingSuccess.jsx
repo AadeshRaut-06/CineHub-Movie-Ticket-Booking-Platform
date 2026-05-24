@@ -1,12 +1,36 @@
 import Navbar from "../components/Navbar"
 
-import { useLocation } from "react-router-dom"
+import { useLocation, Link } from "react-router-dom"
 
 function BookingSuccess() {
 
   const location = useLocation()
 
   const booking = location.state
+
+  if(!booking){
+
+    return(
+
+      <div className="page">
+
+        <Navbar />
+
+        <div className="success-card">
+
+          <h1>No Booking Found</h1>
+
+          <Link to="/">
+            Go Home
+          </Link>
+
+        </div>
+
+      </div>
+
+    )
+
+  }
 
   return (
 
@@ -20,13 +44,17 @@ function BookingSuccess() {
           ✓
         </div>
 
-        <h1>Booking Confirmed</h1>
-
-        <p>
-          Your movie tickets are booked successfully.
-        </p>
+        <h1>
+          Booking Confirmed
+        </h1>
 
         <div className="ticket-details">
+
+          <img
+            src={booking.poster}
+            alt={booking.movie}
+            className="success-poster"
+          />
 
           <h2>{booking.movie}</h2>
 
@@ -58,18 +86,6 @@ function BookingSuccess() {
             <strong>Seats:</strong>
             {" "}
             {booking.seats.join(", ")}
-          </p>
-
-          <p>
-            <strong>Total Tickets:</strong>
-            {" "}
-            {booking.seats.length}
-          </p>
-
-          <p>
-            <strong>Booking ID:</strong>
-            {" "}
-            CINEHUB{Math.floor(Math.random()*100000)}
           </p>
 
         </div>
