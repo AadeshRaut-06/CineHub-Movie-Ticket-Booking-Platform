@@ -16,55 +16,72 @@ function Home() {
     movies.filter(movie => movie.language === "Marathi")
 
   return (
-    <div className="page">
+
+    <div className="page" id="home">
 
       <Navbar />
 
       <HeroBanner movie={movies[0]} />
 
-      <div className="section">
+      <div className="section" id="movies">
 
-        <h2>English Movies</h2>
+        <h2>English Blockbusters</h2>
 
         <div className="movie-row">
+
           {
             englishMovies.map(movie => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+              />
             ))
           }
+
         </div>
 
       </div>
 
       <div className="section">
 
-        <h2>Hindi Movies</h2>
+        <h2>Hindi Trending</h2>
 
         <div className="movie-row">
+
           {
             hindiMovies.map(movie => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+              />
             ))
           }
+
         </div>
 
       </div>
 
       <div className="section">
 
-        <h2>Marathi Movies</h2>
+        <h2>Marathi Cinema</h2>
 
         <div className="movie-row">
+
           {
             marathiMovies.map(movie => (
-              <MovieCard key={movie.id} movie={movie} />
+              <MovieCard
+                key={movie.id}
+                movie={movie}
+              />
             ))
           }
+
         </div>
 
       </div>
 
     </div>
+
   )
 }
 

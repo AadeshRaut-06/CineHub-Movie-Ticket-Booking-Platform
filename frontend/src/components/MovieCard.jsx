@@ -5,25 +5,33 @@ function MovieCard({ movie }) {
   const navigate = useNavigate()
 
   return (
-    <div className="movie-card">
 
-      <img src={movie.image} alt={movie.title} />
+  <div className="movie-card">
 
-      <div className="movie-info">
+    <img src={movie.image} alt={movie.title} />
 
-        <h3>{movie.title}</h3>
+    <div className="movie-info">
 
-        <p>{movie.language}</p>
+      <h3>{movie.title}</h3>
 
-        <button
-          onClick={() => navigate("/bookings")}
-        >
-          Get Ticket
-        </button>
+      <p>{movie.language}</p>
+
+      <div className="movie-meta">
+
+        <span>⭐ {movie.rating}</span>
+        <span>{movie.duration}</span>
 
       </div>
 
+      <button
+        onClick={() => navigate("/bookings")}
+      >
+        Get Ticket
+      </button>
+
     </div>
+
+  </div>
   )
 }
 

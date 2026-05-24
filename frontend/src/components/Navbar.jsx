@@ -1,22 +1,17 @@
-import { Link } from "react-router-dom"
+<div className="nav-links">
 
-function Navbar() {
-  return (
-    <div className="navbar">
+  <a href="#home">Home</a>
 
-      <div className="logo">
-        STAR Cineplex
-      </div>
+  <a href="#movies">
+    Movies
+  </a>
 
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/movies">Movies</Link>
-        <Link to="/bookings">Bookings</Link>
-        <Link to="/dashboard">Dashboard</Link>
-      </div>
+  <a href="#bookings">
+    Bookings
+  </a>
 
-    </div>
-  )
-}
+  <a href="#dashboard">
+    Dashboard
+  </a>
 
-export default Navbar
+</div>

@@ -194,3 +194,53 @@ body {
   padding: 40px;
   border-radius: 20px;
 }
+
+.movie-meta{
+  display:flex;
+  justify-content:space-between;
+  margin-top:10px;
+  color:#bdbdbd;
+  font-size:14px;
+}
+
+.screen{
+  width:100%;
+  text-align:center;
+  background:#d1d5db;
+  color:black;
+  padding:10px;
+  margin:20px 0;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.selected-seat{
+  background:#b026ff !important;
+}
+
+.seats{
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:12px;
+}
+
+.seats button{
+  height:45px;
+  border:none;
+  border-radius:10px;
+  background:#1f2937;
+  color:white;
+  cursor:pointer;
+}
+
+.movie-row::-webkit-scrollbar{
+  display:none;
+}
+
+.movie-card{
+  transition:0.3s;
+}
+
+.movie-card:hover{
+  transform:scale(1.05);
+}
