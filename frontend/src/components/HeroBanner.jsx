@@ -1,10 +1,34 @@
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-function HeroBanner({ movie }) {
+import movies from "../data/movies"
+
+function HeroBanner() {
+
+  const [current, setCurrent] = useState(0)
 
   const navigate = useNavigate()
 
+  useEffect(() => {
+
+    const interval = setInterval(() => {
+
+      setCurrent(prev =>
+        prev === movies.length - 1
+        ? 0
+        : prev + 1
+      )
+
+    }, 4000)
+
+    return () => clearInterval(interval)
+
+  }, [])
+
+  const movie = movies[current]
+
   return (
+
     <div
       className="hero-banner"
       style={{
@@ -17,21 +41,19 @@ function HeroBanner({ movie }) {
         <h1>{movie.title}</h1>
 
         <p>
-          Experience premium cinema booking with CineHub.
-          Enjoy immersive visuals and luxury seating.
+          Experience premium cinema booking
+          with CineHub.
         </p>
 
         <div className="hero-buttons">
 
           <button
             className="primary-btn"
-            onClick={() => navigate("/bookings")}
+            onClick={() =>
+              navigate(`/bookings/${movie.id}`)
+            }
           >
             Get Tickets
-          </button>
-
-          <button className="secondary-btn">
-            Watch Trailer
           </button>
 
         </div>
@@ -39,7 +61,9 @@ function HeroBanner({ movie }) {
       </div>
 
     </div>
+
   )
+
 }
 
 export default HeroBanner

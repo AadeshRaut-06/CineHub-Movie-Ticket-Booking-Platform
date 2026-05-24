@@ -1,7 +1,16 @@
 import { useState } from "react"
 import Navbar from "../components/Navbar"
+import { useNavigate, useParams } from "react-router-dom"
+import movies from "../data/movies"
 
 function Bookings() {
+
+  const navigate = useNavigate()
+
+const { id } = useParams()
+
+const movie =
+  movies.find(m => m.id == id)
 
   const [selectedSeats, setSelectedSeats] = useState([])
 
@@ -31,13 +40,11 @@ function Bookings() {
 
   }
 
-  const confirmBooking = () => {
+ const confirmBooking = () => {
 
-    alert(
-      `Booking Confirmed 🎉\nSeats : ${selectedSeats.join(", ")}`
-    )
+  navigate("/success")
 
-  }
+}
 
   return (
 
@@ -52,12 +59,12 @@ function Bookings() {
         <div className="booking-card">
 
           <img
-            src="https://image.tmdb.org/t/p/original/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg"
+           src={movie.image}
           />
 
           <div className="booking-info">
 
-            <h2>Avatar : The Way Of Water</h2>
+            <h2>{movie.title}</h2>
 
             <select>
               <option>Select Theatre</option>
@@ -70,15 +77,31 @@ function Bookings() {
 
             <div className="time-slots">
 
-              <button>11:00 AM</button>
+  <button
+    onClick={() => alert("11:00 AM Selected")}
+  >
+    11:00 AM
+  </button>
 
-              <button>03:00 PM</button>
+  <button
+    onClick={() => alert("03:00 PM Selected")}
+  >
+    03:00 PM
+  </button>
 
-              <button>06:45 PM</button>
+  <button
+    onClick={() => alert("06:45 PM Selected")}
+  >
+    06:45 PM
+  </button>
 
-              <button>10:30 PM</button>
+  <button
+    onClick={() => alert("10:30 PM Selected")}
+  >
+    10:30 PM
+  </button>
 
-            </div>
+</div>
 
             <input
               type="text"

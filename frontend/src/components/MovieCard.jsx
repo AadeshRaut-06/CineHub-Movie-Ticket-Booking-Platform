@@ -24,10 +24,10 @@ function MovieCard({ movie }) {
       </div>
 
       <button
-        onClick={() => navigate("/bookings")}
-      >
-        Get Ticket
-      </button>
+  onClick={() => navigate(`/bookings/${movie.id}`)}
+>
+  Get Ticket
+</button>
 
     </div>
 

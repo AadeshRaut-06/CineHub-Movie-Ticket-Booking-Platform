@@ -21,7 +21,7 @@ function Home() {
 
       <Navbar />
 
-      <HeroBanner movie={movies[0]} />
+      <HeroBanner />
 
       <div className="section" id="movies">
 

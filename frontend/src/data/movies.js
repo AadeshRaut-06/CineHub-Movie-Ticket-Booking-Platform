@@ -36,7 +36,7 @@ const movies = [
     language: "Hindi",
     rating: "8.7",
     duration: "2h 55m",
-    image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/pushpa-2-the-rule-et00356724-1718171735.jpg",
+    image: "https://m.media-amazon.com/images/M/MV5BZjVkZjk2ZjEtNjAwYi00NjE5LWE5YzEtYzRiN2IwM2Y0YzA3XkEyXkFqcGc@._V1_.jpg",
     banner: "https://wallpapercave.com/wp/wp13376935.jpg"
   },
 
@@ -66,7 +66,7 @@ const movies = [
     language: "Marathi",
     rating: "8.6",
     duration: "2h 10m",
-    image: "https://upload.wikimedia.org/wikipedia/en/8/8f/Baipan_Bhari_Deva.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/en/5/5c/Baipan_Bhari_Deva_film_poster.jpg",
     banner: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202307/baipan_bhari_deva-sixteen_nine.jpg"
   },
 
@@ -76,7 +76,7 @@ const movies = [
     language: "Hindi",
     rating: "9.2",
     duration: "3h",
-    image: "https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/kalki-2898-ad-et00311673-1714375668.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/en/4/4c/Kalki_2898_AD.jpg",
     banner: "https://wallpapercave.com/wp/wp13683717.jpg"
   }
 
