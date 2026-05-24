@@ -141,6 +141,18 @@ createBooking({
 
 })
 
+.then(() => {
+
+  console.log("Booking Saved")
+
+})
+
+.catch((err) => {
+
+  console.log(err)
+
+})
+
 
     navigate("/success", {
 
