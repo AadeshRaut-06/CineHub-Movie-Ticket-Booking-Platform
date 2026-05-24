@@ -10,7 +10,14 @@ function Bookings() {
   const { id } = useParams()
 
   const movie =
-    movies.find(m => m.id == id) || movies[0]
+  movies.find(m => m.id == id) || {
+
+    title: "Select Your Movie",
+
+    image:
+      "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
+
+  }
 
   const [selectedSeats, setSelectedSeats] = useState([])
 
@@ -135,160 +142,181 @@ function Bookings() {
 
             <h2>{movie.title}</h2>
 
-            <select
-              onChange={(e) =>
-                setSelectedTheater(e.target.value)
-              }
-            >
+<p className="movie-meta">
+  Action • Adventure • IMAX 3D
+</p>
 
-              <option value="">
-                Select Theatre
-              </option>
+<div className="booking-grid">
 
-              <option>PVR</option>
+  <div className="booking-field">
 
-              <option>INOX</option>
+    <label>Select Theatre</label>
 
-              <option>Cinepolis</option>
+    <select
+      onChange={(e) =>
+        setSelectedTheater(e.target.value)
+      }
+    >
 
-            </select>
+      <option>PVR Cinemas</option>
+      <option>INOX</option>
+      <option>Cinepolis</option>
+      <option>Miraj Cinemas</option>
 
-            <input
-              type="date"
+    </select>
 
-              onChange={(e) =>
-                setSelectedDate(e.target.value)
-              }
-            />
+  </div>
 
-            <input
-              type="text"
+  <div className="booking-field">
 
-              placeholder="Full Name"
+    <label>Select Date</label>
 
-              onChange={(e) =>
-                setCustomerName(e.target.value)
-              }
-            />
+    <input
+      type="date"
+      onChange={(e) =>
+        setSelectedDate(e.target.value)
+      }
+    />
 
-            <div className="time-slots">
+  </div>
 
-              {
-                [
-                  "11:00 AM",
-                  "03:00 PM",
-                  "06:45 PM",
-                  "10:30 PM"
-                ]
-                .map(time => (
+</div>
 
-                  <button
+<div className="booking-field">
 
-                    key={time}
+  <label>Your Name</label>
 
-                    type="button"
+  <input
+    type="text"
+    placeholder="Enter Full Name"
+    onChange={(e) =>
+      setCustomerName(e.target.value)
+    }
+  />
 
-                    className={
-                      selectedTime === time
-                      ? "active-time"
-                      : ""
-                    }
+</div>
 
-                    onClick={() =>
-                      setSelectedTime(time)
-                    }
-                  >
+<div className="booking-field">
 
-                    {time}
+  <label>Show Timings</label>
 
-                  </button>
+  <div className="time-slots">
 
-                ))
-              }
+    {
+      [
+        "09:00 AM",
+        "12:30 PM",
+        "03:45 PM",
+        "06:30 PM",
+        "10:15 PM"
+      ].map(time => (
 
-            </div>
+        <button
+          key={time}
+          className={
+            selectedTime === time
+            ? "active-time"
+            : ""
+          }
 
-            <input
-              type="email"
-              placeholder="Email Address"
-            />
+          onClick={() =>
+            setSelectedTime(time)
+          }
+        >
+          {time}
+        </button>
 
-            <input
-              type="tel"
-              placeholder="Phone Number"
-            />
+      ))
+    }
 
-            <select>
+  </div>
 
-              <option>
-                Seat Category
-              </option>
+</div>
 
-              <option>
-                Silver ₹250
-              </option>
+<div className="booking-field">
 
-              <option>
-                Gold ₹450
-              </option>
+  <label>Seat Category</label>
 
-              <option>
-                VIP Recliner ₹900
-              </option>
+  <select>
 
-            </select>
+    <option>Silver ₹250</option>
 
-            <div className="seat-layout">
+    <option>Gold ₹450</option>
 
-              <h3>Select Your Seats</h3>
+    <option>Platinum ₹700</option>
 
-              <div className="screen">
+    <option>VIP Recliner ₹1200</option>
 
-                SCREEN THIS WAY
+  </select>
 
-              </div>
+</div>
 
-              <div className="seats">
+<div className="seat-layout">
 
-                {
-                  seats.map(seat => (
+  <h3>Select Seats</h3>
 
-                    <button
+  <div className="screen">
+    SCREEN THIS WAY
+  </div>
 
-                      key={seat}
+  <div className="seats">
 
-                      type="button"
+    {
+      seats.map(seat => (
 
-                      className={
-                        selectedSeats.includes(seat)
-                        ? "selected-seat"
-                        : ""
-                      }
+        <button
+          key={seat}
 
-                      onClick={() =>
-                        handleSeat(seat)
-                      }
-                    >
+          className={
+            selectedSeats.includes(seat)
+            ? "selected-seat"
+            : ""
+          }
 
-                      {seat}
+          onClick={() =>
+            handleSeat(seat)
+          }
+        >
+          {seat}
+        </button>
 
-                    </button>
+      ))
+    }
 
-                  ))
-                }
+  </div>
 
-              </div>
+</div>
 
-            </div>
+<div className="booking-summary">
 
-            <button
-              className="book-btn"
-              onClick={confirmBooking}
-            >
+  <h3>Booking Summary</h3>
 
-              Confirm Booking
+  <p>
+    Seats:
+    {" "}
+    {selectedSeats.join(", ")}
+  </p>
 
-            </button>
+  <p>
+    Timing:
+    {" "}
+    {selectedTime}
+  </p>
+
+  <p>
+    Theatre:
+    {" "}
+    {selectedTheater}
+  </p>
+
+</div>
+
+<button
+  className="book-btn"
+  onClick={confirmBooking}
+>
+  Confirm Booking
+</button>
 
           </div>
 
