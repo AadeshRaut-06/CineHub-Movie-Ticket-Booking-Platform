@@ -1,16 +1,40 @@
 import Navbar from "../components/Navbar"
 
+import {
+  useEffect,
+  useState
+}
+from "react"
+
+import {
+  getBookings
+}
+from "../services/BookingService"
+
 function BookingsList() {
 
-  const booking = JSON.parse(
+  const [bookings, setBookings]
+  = useState([])
 
-    localStorage.getItem(
-      "cinehub-booking"
-    )
+  useEffect(() => {
 
-  )
+    getBookings()
 
-  if(!booking){
+      .then(res => {
+
+        setBookings(res.data)
+
+      })
+
+      .catch(err => {
+
+        console.log(err)
+
+      })
+
+  }, [])
+
+  if(bookings.length === 0){
 
     return(
 
@@ -46,50 +70,62 @@ function BookingsList() {
 
         <h1>Your Bookings</h1>
 
-        <div className="booking-history-card">
+        {
+          bookings.map((booking,index)=>(
 
-          <img
-            src={booking.poster}
-            alt={booking.movie}
-          />
+            <div
+              className="booking-history-card"
+              key={index}
+            >
 
-          <div>
+              <div>
 
-            <h2>{booking.movie}</h2>
+                <h2>
+                  {booking.movieName}
+                </h2>
 
-            <p>
-              Customer:
-              {" "}
-              {booking.customer}
-            </p>
+                <p>
+                  Customer:
+                  {" "}
+                  {booking.customerName}
+                </p>
 
-            <p>
-              Theatre:
-              {" "}
-              {booking.theater}
-            </p>
+                <p>
+                  Theatre:
+                  {" "}
+                  {booking.theaterName}
+                </p>
 
-            <p>
-              Timing:
-              {" "}
-              {booking.timing}
-            </p>
+                <p>
+                  Timing:
+                  {" "}
+                  {booking.showTime}
+                </p>
 
-            <p>
-              Date:
-              {" "}
-              {booking.date}
-            </p>
+                <p>
+                  Date:
+                  {" "}
+                  {booking.showDate}
+                </p>
 
-            <p>
-              Seats:
-              {" "}
-              {booking.seats.join(", ")}
-            </p>
+                <p>
+                  Tickets:
+                  {" "}
+                  {booking.ticketCount}
+                </p>
 
-          </div>
+                <p>
+                  Status:
+                  {" "}
+                  {booking.bookingStatus}
+                </p>
 
-        </div>
+              </div>
+
+            </div>
+
+          ))
+        }
 
       </div>
 

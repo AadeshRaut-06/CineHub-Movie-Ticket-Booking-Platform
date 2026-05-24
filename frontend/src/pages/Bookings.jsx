@@ -2,6 +2,10 @@ import { useState } from "react"
 import Navbar from "../components/Navbar"
 import { useNavigate, useParams } from "react-router-dom"
 import movies from "../data/movies"
+import {
+  createBooking
+}
+from "../services/BookingService"
 
 function Bookings() {
 
@@ -115,6 +119,29 @@ localStorage.setItem(
   JSON.stringify(bookingData)
 
 ) 
+
+createBooking({
+
+  customerName,
+
+  movieName: movie.title,
+
+  theaterName: selectedTheater,
+
+  showDate: selectedDate,
+
+  showTime: selectedTime,
+
+  seatType: "Premium",
+
+  ticketCount:
+    selectedSeats.length,
+
+  bookingStatus: "CONFIRMED"
+
+})
+
+
     navigate("/success", {
 
       state: {
