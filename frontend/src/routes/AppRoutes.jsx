@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from '../pages/Home'
 import Movies from '../pages/Movies'
-import Booking from '../pages/Booking'
+import Booking from '../pages/Bookings'
 import Dashboard from '../pages/Dashboard'
 import NotFound from '../pages/NotFound'
 
