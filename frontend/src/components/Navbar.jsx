@@ -1,17 +1,39 @@
-<div className="nav-links">
+import { Link } from "react-router-dom"
 
-  <a href="#home">Home</a>
+function Navbar() {
 
-  <a href="#movies">
-    Movies
-  </a>
+  return (
 
-  <a href="#bookings">
-    Bookings
-  </a>
+    <div className="navbar">
 
-  <a href="#dashboard">
-    Dashboard
-  </a>
+      <div className="logo">
+        STAR Cineplex
+      </div>
 
-</div>
+      <div className="nav-links">
+
+        <Link to="/">
+          Home
+        </Link>
+
+        <Link to="/movies">
+          Movies
+        </Link>
+
+        <Link to="/bookings">
+          Bookings
+        </Link>
+
+        <Link to="/dashboard">
+          Dashboard
+        </Link>
+
+      </div>
+
+    </div>
+
+  )
+
+}
+
+export default Navbar
