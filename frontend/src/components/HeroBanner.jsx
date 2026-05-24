@@ -1,19 +1,24 @@
 import { useNavigate } from "react-router-dom"
 
-function HeroBanner() {
+function HeroBanner({ movie }) {
 
   const navigate = useNavigate()
 
   return (
-    <div className="hero-banner">
+    <div
+      className="hero-banner"
+      style={{
+        backgroundImage: `url(${movie.banner})`
+      }}
+    >
 
       <div className="overlay">
 
-        <h1>Avatar : The Way Of Water</h1>
+        <h1>{movie.title}</h1>
 
         <p>
-          Experience the next generation cinematic universe.
-          Book tickets instantly with CineHub.
+          Experience premium cinema booking with CineHub.
+          Enjoy immersive visuals and luxury seating.
         </p>
 
         <div className="hero-buttons">
@@ -22,7 +27,7 @@ function HeroBanner() {
             className="primary-btn"
             onClick={() => navigate("/bookings")}
           >
-            Book Ticket
+            Get Tickets
           </button>
 
           <button className="secondary-btn">

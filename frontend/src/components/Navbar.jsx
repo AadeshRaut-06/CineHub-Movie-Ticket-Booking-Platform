@@ -5,7 +5,7 @@ function Navbar() {
     <div className="navbar">
 
       <div className="logo">
-        🎬 CineHub
+        STAR Cineplex
       </div>
 
       <div className="nav-links">

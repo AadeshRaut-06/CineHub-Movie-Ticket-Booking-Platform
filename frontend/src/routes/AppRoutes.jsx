@@ -4,7 +4,6 @@ import Home from "../pages/Home"
 import Movies from "../pages/Movies"
 import Bookings from "../pages/Bookings"
 import Dashboard from "../pages/Dashboard"
-import NotFound from "../pages/NotFound"
 
 function AppRoutes() {
   return (
@@ -14,7 +13,6 @@ function AppRoutes() {
         <Route path="/movies" element={<Movies />} />
         <Route path="/bookings" element={<Bookings />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   )

@@ -18,7 +18,7 @@ function MovieCard({ movie }) {
         <button
           onClick={() => navigate("/bookings")}
         >
-          Book Now
+          Get Ticket
         </button>
 
       </div>
