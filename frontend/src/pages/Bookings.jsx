@@ -7,10 +7,10 @@ function Bookings() {
 
   const navigate = useNavigate()
 
-const { id } = useParams()
+  const { id } = useParams()
 
-const movie =
-  movies.find(m => m.id == id)
+  const movie =
+    movies.find(m => m.id == id) || movies[0]
 
   const [selectedSeats, setSelectedSeats] = useState([])
 
@@ -18,15 +18,20 @@ const movie =
 
   const [selectedTheater, setSelectedTheater] = useState("")
 
-const [selectedDate, setSelectedDate] = useState("")
+  const [selectedDate, setSelectedDate] = useState("")
 
-const [customerName, setCustomerName] = useState("")
+  const [customerName, setCustomerName] = useState("")
 
   const seats = [
+
     "A1","A2","A3","A4","A5","A6","A7","A8",
+
     "B1","B2","B3","B4","B5","B6","B7","B8",
+
     "C1","C2","C3","C4","C5","C6","C7","C8",
+
     "D1","D2","D3","D4","D5","D6","D7","D8"
+
   ]
 
   const handleSeat = (seat) => {
@@ -48,45 +53,66 @@ const [customerName, setCustomerName] = useState("")
 
   }
 
-  
+  const confirmBooking = () => {
 
- const confirmBooking = () => {
+    if(selectedSeats.length === 0){
 
-  if(selectedSeats.length === 0){
+      alert("Please select seats")
 
-    alert("Please select seats")
+      return
+    }
 
-    return
+    if(!selectedTime){
+
+      alert("Please select show timing")
+
+      return
+    }
+
+    if(!selectedTheater){
+
+      alert("Please select theatre")
+
+      return
+    }
+
+    if(!selectedDate){
+
+      alert("Please select date")
+
+      return
+    }
+
+    if(!customerName){
+
+      alert("Please enter your name")
+
+      return
+    }
+
+    navigate("/success", {
+
+      state: {
+
+        movie: movie.title,
+
+        seats: selectedSeats,
+
+        timing: selectedTime,
+
+        theater: selectedTheater,
+
+        date: selectedDate,
+
+        customer: customerName,
+
+        poster: movie.image
+
+      }
+
+    })
+
   }
-
-  if(!selectedTime){
-
-    alert("Please select show timing")
-
-    return
-  }
-
-  navigate("/success", {
-
-  state: {
-
-    movie: movie.title,
-
-    seats: selectedSeats,
-
-    timing: selectedTime,
-
-    theater: selectedTheater,
-
-    date: selectedDate,
-
-    customer: customerName
-
-  }
-
-})
-
-}
 
   return (
 
@@ -101,7 +127,8 @@ const [customerName, setCustomerName] = useState("")
         <div className="booking-card">
 
           <img
-           src={movie.image}
+            src={movie.image}
+            alt={movie.title}
           />
 
           <div className="booking-info">
@@ -109,62 +136,77 @@ const [customerName, setCustomerName] = useState("")
             <h2>{movie.title}</h2>
 
             <select
-  onChange={(e) =>
-    setSelectedTheater(e.target.value)
-  }
->
+              onChange={(e) =>
+                setSelectedTheater(e.target.value)
+              }
+            >
 
-  <option>Select Theatre</option>
+              <option value="">
+                Select Theatre
+              </option>
 
-  <option>PVR</option>
+              <option>PVR</option>
 
-  <option>INOX</option>
+              <option>INOX</option>
 
-  <option>Cinepolis</option>
+              <option>Cinepolis</option>
 
-</select>
+            </select>
 
-<input
-  type="date"
+            <input
+              type="date"
 
-  onChange={(e) =>
-    setSelectedDate(e.target.value)
-  }
-/>
+              onChange={(e) =>
+                setSelectedDate(e.target.value)
+              }
+            />
 
-<input
-  type="text"
+            <input
+              type="text"
 
-  placeholder="Full Name"
+              placeholder="Full Name"
 
-  onChange={(e) =>
-    setCustomerName(e.target.value)
-  }
-/>
+              onChange={(e) =>
+                setCustomerName(e.target.value)
+              }
+            />
 
             <div className="time-slots">
 
-  {
-    ["11:00 AM", "03:00 PM", "06:45 PM", "10:30 PM"]
-    .map(time => (
+              {
+                [
+                  "11:00 AM",
+                  "03:00 PM",
+                  "06:45 PM",
+                  "10:30 PM"
+                ]
+                .map(time => (
 
-      <button
-        key={time}
-        className={
-          selectedTime === time
-          ? "active-time"
-          : ""
-        }
+                  <button
 
-        onClick={() => setSelectedTime(time)}
-      >
-        {time}
-      </button>
+                    key={time}
 
-    ))
-  }
+                    type="button"
 
-</div>
+                    className={
+                      selectedTime === time
+                      ? "active-time"
+                      : ""
+                    }
+
+                    onClick={() =>
+                      setSelectedTime(time)
+                    }
+                  >
+
+                    {time}
+
+                  </button>
+
+                ))
+              }
+
+            </div>
 
             <input
               type="email"
@@ -178,13 +220,21 @@ const [customerName, setCustomerName] = useState("")
 
             <select>
 
-              <option>Seat Category</option>
+              <option>
+                Seat Category
+              </option>
 
-              <option>Silver ₹250</option>
+              <option>
+                Silver ₹250
+              </option>
 
-              <option>Gold ₹450</option>
+              <option>
+                Gold ₹450
+              </option>
 
-              <option>VIP Recliner ₹900</option>
+              <option>
+                VIP Recliner ₹900
+              </option>
 
             </select>
 
@@ -193,7 +243,9 @@ const [customerName, setCustomerName] = useState("")
               <h3>Select Your Seats</h3>
 
               <div className="screen">
+
                 SCREEN THIS WAY
+
               </div>
 
               <div className="seats">
@@ -202,15 +254,24 @@ const [customerName, setCustomerName] = useState("")
                   seats.map(seat => (
 
                     <button
+
                       key={seat}
+
+                      type="button"
+
                       className={
                         selectedSeats.includes(seat)
                         ? "selected-seat"
                         : ""
                       }
-                      onClick={() => handleSeat(seat)}
+
+                      onClick={() =>
+                        handleSeat(seat)
+                      }
                     >
+
                       {seat}
+
                     </button>
 
                   ))
@@ -224,7 +285,9 @@ const [customerName, setCustomerName] = useState("")
               className="book-btn"
               onClick={confirmBooking}
             >
+
               Confirm Booking
+
             </button>
 
           </div>
@@ -236,6 +299,7 @@ const [customerName, setCustomerName] = useState("")
     </div>
 
   )
+
 }
 
 export default Bookings

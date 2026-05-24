@@ -16,11 +16,19 @@ function AppRoutes() {
 
         <Route path="/movies" element={<Movies />} />
 
-        <Route path="/bookings" element={<Bookings />} />
+        <Route
+  path="/bookings"
+  element={<Bookings />}
+/>
+
+<Route
+  path="/bookings/:id"
+  element={<Bookings />}
+/>
 
         <Route path="/dashboard" element={<Dashboard />} />
 
-        <Route path="/success" element={<Success />} />
+        <Route path="/success" element={<BookingSuccess />} />
 
         <Route path="*" element={<NotFound />} />
 
